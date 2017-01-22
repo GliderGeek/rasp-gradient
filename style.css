@@ -1,0 +1,32 @@
+.banner{
+	padding: 20px;
+	color: white;
+	width: 100%;
+	background-color:#2E79BA;
+	font-size: 3em;
+}
+
+.main{
+    text-align: center;
+}
+
+.forecasted-date{
+	margin-top: 20px;
+	font-size: 1.5em;
+}
+
+.history-navigation{
+	width: 24%;
+	display: inline-block;
+}
+
+.history-navigation-left, 
+.history-navigation-right, {
+	width: 24%;
+	display: inline-block;
+}
+
+.history-navigation-left{
+	margin-left: 25%;
+	margin-right: 75%;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset='utf-8'></meta>
+		<title>RASP verloop</title>
+		<link rel='stylesheet' href='style.css' type='text/css' />
+		<link rel='stylesheet' href='bootstrap/bootstrap.min.css' type='text/css' />
+		<script src="rasp.js"></script>
+		<link rel="icon" type="image/png" href="favicon.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body>
+	<div class="main">
+
+		<div class="banner"><p>RASP gradient (beta)</p></div>
+
+
+		<div class="col-lg-4">
+			<div class="col-xs-12 forecasted-date"> Vandaag </div>
+			<img id="rasp_image_today" src="images/vandaag_m0.png" style="width:100%;"></img>
+
+			<div style="width:20%; display:inline-block;"></div>
+			<div style="width:20%; display:inline-block;">
+				<a id="today_previous" onclick="previousImage_today()"><img src="images/arrow_left.png" style="width:70%"></img></a>
+			</div>
+			<div style="width:20%; display:inline-block;">
+				<a id="today_next" onclick="nextImage_today()" style="display:none;"><img src="images/arrow_right.png" style="width:70%; margin-left:20px;;"></img></a>
+			</div>
+			<div style="width:20%; display:inline-block;"></div>
+
+
+		</div>
+
+
+		<div class="col-lg-4">
+			<div class="col-xs-12 forecasted-date"> Morgen </div>
+			<img id="rasp_image_tomorrow" src="images/morgen_m0.png" style="width:100%;"></img>
+
+			<div style="width:20%; display:inline-block;"></div>
+			<div style="width:20%; display:inline-block;">
+				<a id="tomorrow_previous" onclick="previousImage_tomorrow()"><img src="images/arrow_left.png" style="width:70%; margin-left:20px;;"></img></a>
+			</div>
+			<div style="width:20%; display:inline-block;">
+				<a id="tomorrow_next" onclick="nextImage_tomorrow()" style="display:none;"><img src="images/arrow_right.png" style="width:70%; margin-left:20px;;"></img></a>
+			</div>
+			<div style="width:20%; display:inline-block;"></div>
+		</div>
+
+
+		<div class="col-lg-4">
+			<div class="col-xs-12 forecasted-date"> Overmorgen </div>
+			<img src="images/not_yet_analyzed.png" style="width:100%;"></img>
+		</div>
+		
+	</div>
+	</body>
+</html>
