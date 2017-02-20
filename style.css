@@ -30,3 +30,16 @@
 	margin-left: 25%;
 	margin-right: 75%;
 }
+
+.image{
+	/*position: relative;*/
+	width: 100%;
+	color: white;
+}
+
+h2{
+	position: absolute; 
+	top: 23%; 
+	left: -30%; 
+	width: 100%;	
+}
