@@ -11,19 +11,19 @@ from RASP import RASP_Object
 
 def updated(url):
     print 'checking if updated'
-    now = datetime.datetime.now()
+    now = datetime.datetime.utcnow()
 
     try:
         image = urllib.URLopener().open(url)
     except IOError:
         print 'caught 404!'
         return False
-    last_time_edited = image.headers.headers[2].split()[-2]
-    last_edit_hh, last_edit_mm, last_edit_ss = [int(time_str) for time_str in last_time_edited.split(':')]
-    last_edit = now.replace(hour=last_edit_hh, minute=last_edit_mm, second=last_edit_ss)
+
+    last_edit_str = image.headers.headers[2].split(',')[-1].strip()
+    last_edit = datetime.datetime.strptime(last_edit_str, '%d %b %Y %H:%M:%S %Z')
+
     print 'now = %s, last_edit = %s' % (now, last_edit)
     return now > last_edit
-
 
 cloudinary.config(
     cloud_name=CLOUD_NAME,
