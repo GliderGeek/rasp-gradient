@@ -1,6 +1,8 @@
+var days = ['Zondag','Maandag','Dinsdag','Woensdag','Donderdag','Vrijdag','Zaterdag'];
 var today=0;
 var tomorrow=0;
-var t = new Date().getTime();
+var now = new Date();
+var t = now.getTime();
 var url = "";
 
 function set_correct_links(){
@@ -10,9 +12,13 @@ function set_correct_links(){
 	var url_tomorrow=base_url.concat(t.toString(),"/tomorrow_m0.png");
 	var url_day_after_tomorrow=base_url.concat(t.toString(),"/day_after_tomorrow_m0.png");
 
-	console.log(url_today);
-	console.log(url_tomorrow);
-	console.log(url_day_after_tomorrow);
+	var day = days[now.getDay()];
+	var day_p1 = days[(now.getDay() + 1) % days.length];
+	var day_p2 = days[(now.getDay() + 2) % days.length];
+
+	document.getElementById("today_name").innerHTML=day;
+	document.getElementById("tomorrow_name").innerHTML=day_p1;
+	document.getElementById("day_after_tomorrow_name").innerHTML=day_p2;
 
 	document.getElementById("rasp_image_today").src = url_today;
 	document.getElementById("rasp_image_tomorrow").src = url_tomorrow;
